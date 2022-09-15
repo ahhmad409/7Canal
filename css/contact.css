@@ -1,0 +1,85 @@
+.page-heading {
+  margin: 150px 0 50px 0px;
+  color: #cf9312;
+  font-weight: bold;
+  font-size: 25px !important;
+}
+
+body {
+  background-color: #fff;
+}
+
+.map figure {
+  margin: 0;
+}
+
+.map figure img {
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
+  height: 605px;
+  /* margin-left: 50% !important; */
+  /* transform: translatex(-50%) !important; */
+  /* border: none !important; */
+  /* border: 5px solid #294785 !important; */
+  /* padding: 15px; */
+}
+
+.map-logo {
+  width: 20%;
+  position: absolute;
+  z-index: 50;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -200%);
+}
+
+.mb-3 {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+.contact label {
+  color: #eee;
+  font-weight: bold;
+}
+
+.contact.success input {
+  border-color: #2ecc71;
+}
+
+.contact .error input {
+  border-color: #e74c3c;
+}
+
+.contact i {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+.contact .success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.contact .error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.contact small {
+  color: #ff7c6f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.contact .error small {
+  visibility: visible;
+}
