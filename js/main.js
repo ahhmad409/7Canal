@@ -71,9 +71,10 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         a.setAttribute("href", "./downloads/video.m4v");
       else if (link.textContent == "3D Walkthrough")
         a.setAttribute("href", "./downloads/video.m4v");
-      else if (link.textContent == "Price Lists")
-        a.setAttribute("href", "./downloads/video.m4v");
-      else if (link.textContent == "Construction Update")
+      else if (link.textContent == "Price Lists") {
+        a.setAttribute("download", "Price List");
+        a.setAttribute("href", "./downloads/price-list.jpeg");
+      } else if (link.textContent == "Construction Update")
         a.setAttribute("href", "./downloads/video.m4v");
       else if (link.textContent == "Layouts")
         a.setAttribute("href", "./downloads/video.m4v");
