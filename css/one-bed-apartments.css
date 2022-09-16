@@ -2,6 +2,10 @@ body {
   background-color: #fff;
 }
 
+.types-container {
+  overflow: hidden;
+}
+
 .types-container img {
   width: 100%;
 }
@@ -20,4 +24,13 @@ body {
   .types-container .col-md-6 {
     padding: 4rem;
   }
+}
+
+img {
+  transition: transform 0.5s;
+}
+
+img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }

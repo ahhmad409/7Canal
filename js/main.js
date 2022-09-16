@@ -68,18 +68,17 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
 
       // FOR PRODUCTION
       if (link.textContent == "Brochure")
-        a.setAttribute("href", "./downloads/video.m4v");
+        a.setAttribute("href", "./downloads/7Canal Brochure.pdf");
       else if (link.textContent == "3D Walkthrough")
-        a.setAttribute("href", "./downloads/video.m4v");
+        a.setAttribute("href", "./downloads/7-Canal-walkthrough.mp4");
       else if (link.textContent == "Price Lists") {
         a.setAttribute("download", "Price List");
         a.setAttribute("href", "./downloads/price-list.jpeg");
       } else if (link.textContent == "Construction Update")
-        a.setAttribute("href", "./downloads/video.m4v");
-      else if (link.textContent == "Layouts")
-        a.setAttribute("href", "./downloads/video.m4v");
+        a.setAttribute("href", "#");
+      else if (link.textContent == "Layouts") a.setAttribute("href", "#");
       else if (link.textContent == "Floor Plans")
-        a.setAttribute("href", "./downloads/video.m4v");
+        a.setAttribute("href", "./downloads/floor-plans.pdf");
 
       // FOR DEMO
       // if (link.textContent == "Brochure")

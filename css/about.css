@@ -73,3 +73,7 @@ img:hover {
 .modal-header button span {
   color: #fff !important;
 }
+
+.form-modal .modal-body {
+  display: unset;
+}
