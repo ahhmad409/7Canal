@@ -1,6 +1,5 @@
 (function ($) {
   "use strict";
-
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 200) {
@@ -107,3 +106,56 @@ $(document).ready(function () {
     }
   });
 });
+
+document.getElementsByClassName('book_now_bottom_section')[0].addEventListener('mouseenter', () => {
+  document.getElementsByClassName('booking_form')[0].style.transform = "scaleX(1)"
+})
+document.getElementsByClassName('book_now_widget book_now_wrapper')[0].addEventListener('mouseleave', () => {
+  document.getElementsByClassName('booking_form')[0].style.transform = "scaleX(0)"
+})
+let arrowBtn = document.getElementById('book_now_arrow');
+arrowBtn.addEventListener('mouseenter', () => {
+  document.getElementsByClassName('booking_form')[0].style.transform = "scaleX(0)"
+
+})
+arrowBtn.addEventListener('click', () => {
+  let widget = document.getElementsByClassName('book_now_bottom_section')[0];
+  if (widget.classList.contains('book_now_widget_hidden')) {
+    widget.style.left = '0px'
+    arrowBtn.innerText = '←'
+
+  }
+  else {
+    widget.style.left = '-50px'
+    arrowBtn.innerText = '→'
+
+  }
+  widget.classList.toggle('book_now_widget_hidden')
+});
+function onFormSubmit(event) {
+  event.preventDefault();
+  document.getElementsByClassName('booking_form')[0].style.transform = "scaleX(0)"
+}
+
+let downloadArrowButton = document.getElementById('download_widgets_arrow');
+downloadArrowButton.addEventListener('click', () => {
+  let widget = document.getElementsByClassName('downloads_widget_bottom_section')[0];
+  if (widget.classList.contains('book_now_widget_hidden')) {
+    widget.style.right = '0px'
+    downloadArrowButton.innerText = '→'
+  }
+  else {
+    widget.style.right = '-160px'
+    downloadArrowButton.innerText = '←'
+  }
+  widget.classList.toggle('book_now_widget_hidden')
+});
+
+document.getElementById('sidebarButton').addEventListener('click', (event) => {
+  let sidebar = document.getElementById('right-sidebar');
+  sidebar.style.right = '0px'
+})
+document.getElementById('sidebar_closeButton').addEventListener('click', (event) => {
+  let sidebar = document.getElementById('right-sidebar');
+  sidebar.style.right = '-400px'
+})
