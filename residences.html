@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -12,8 +12,8 @@
       name="keywords"
       content="7 Canal, Quality living, world class living"
     />
+    <title>7 Canal | Residences</title>
 
-    <title>7 Canal | An Architectural Miracle</title>
     <!-- Favicon -->
     <link href="./images/favicon.png" rel="icon" />
 
@@ -23,13 +23,13 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap Libraries -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Font awesome -->
+    <!-- font awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
@@ -40,11 +40,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/about.css" />
   </head>
-
   <body>
     <div class="wrapper">
-      <!-- Nav Bar Start -->
+      <!-- Navbar -->
       <!-- prettier-ignore -->
       <div class="nav-bar nav-sticky">
         <div class="container-fluid">
@@ -59,8 +59,8 @@
             <a href="./home.html" class="header-logo"> <img src="./images/logo.png" alt="logo" class="navbar-brand-desktop" />
             </a>
               <div class="navbar-nav ">
-                <a href="./home.html" class="nav-item nav-link active ">Home</a>
-                <a href="./residences.html" class="nav-item nav-link hover-underline-animation">Residences</a>
+                <a href="./home.html" class="nav-item nav-link hover-underline-animation">Home</a>
+                <a href="./residences.html" class="nav-item nav-link active">Residences</a>
                 <a href="./amenities.html" class="nav-item nav-link hover-underline-animation">Amenities</a>
                 <a href="./gallery.html" class="nav-item nav-link hover-underline-animation">Gallery</a>
                 <a href="./updates.html" class="nav-item nav-link hover-underline-animation">Construction Updates</a>
@@ -73,116 +73,48 @@
           </nav>
         </div>
       </div>
-      <!-- Nav Bar End -->
-
-      <!-- MAIN IMAGE (BACKGROUND IMAGE OF THIS DIV) -->
-      <div
-        class="container-fluid main-image-container"
-        data-aos="fade-down"
-      ></div>
-
-      <!-- About Start -->
-      <div class="about mt-5">
-        <div class="container m-auto">
-          <div class="row">
-            <div class="col-12 mb-5">
-              <h2 class="text-center" style="color: #333" data-aos="fade-right">
-                7 Canal – An Architectural Miracle <br />
-                <span style="color: #fdbe33"> Living Redefined</span>
-              </h2>
-            </div>
-            <div
-              class="col-12 text-center mb-3"
-              style="overflow: hidden !important"
-            >
-              <img
-                src="./images/home/main-image-2.jpg"
-                alt="homepage image 2"
-                data-aos="fade-left"
-                style="width: 100%"
-              />
-            </div>
-            <div class="col-12 text-center">
-              <p class="p-5" data-aos="fade-right" style="font-size: 22px">
-                Make the most of each day you live. 7 Canal redefines
-                contemporary living by its magnificent features offering
-                enhanced quality of life at an incomparable value. Staying true
-                to our reputation of excellence we offer flawless harmony of
-                residence and healthy lifestyle at 7 Canal Residence
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- About End -->
 
       <!-- MODAL STARTS -->
       <!-- prettier-ignore -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">
-                Please fill below form
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="inputName">Name</label>
-                  <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" required placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail">Email address</label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                  <label for="inputContact">Contact</label>
-                  <input type="text" class="form-control" id="inputContact" required placeholder="Contact">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
-              <a href="#" type="button" id="downloadBtn" class="btn btn-primary">Submit & Download </a>
-            </div>
+      <div class="modal fade form-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Please fill below form
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" required placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="inputContact">Contact</label>
+                <input type="text" class="form-control" id="inputContact" required placeholder="Contact">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
+            <a href="#" type="button" id="downloadBtn" class="btn btn-primary">Submit & Download </a>
           </div>
         </div>
       </div>
+    </div>
+
       <!-- MODAL ENDS -->
+      <h1 class="page-heading text-center" data-aos="fade-in">Residences</h1>
 
-      <!-- Location -->
-      <div class="container mt-5 mb-5" style="overflow: hidden !important">
-        <h2 style="color: #fdbe33" class="text-center" data-aos="fade-left">
-          Location
-        </h2>
-        <p class="text-center mt-2 mb-5">
-          In The Heart Of Lahore <br />Gulberg 2 on Canal Road
-        </p>
-        <div class="map-container-homepage container" data-aos="fade-up">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850.17812281826!2d74.3390556!3d31.532055600000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca613dca79837fff!2zMzHCsDMxJzU1LjQiTiA3NMKwMjAnMjAuNiJF!5e0!3m2!1sen!2s!4v1662459934734!5m2!1sen!2s"
-            width="1300"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            id="iframe-homepage"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <p class="mb-5 mt-5 location-text" data-aos="fade-right">
-            Located at the most prestigious and central location of Lahore; 7
-            Canal offers splendid and spacious residence experience. The
-            LOCATION ensures minimal travel time and hassle-free drive to all
-            key areas
-          </p>
-        </div>
-      </div>
-
-      <!-- Footer Start -->
+      <!-- FOOOTER Start -->
       <!-- prettier-ignore -->
       <div class="footer" data-aos="fade-in">
         <div class="container">
@@ -209,7 +141,6 @@
                 <p><i class="fas fa-mobile"></i>+92 312 646 9111</p>
               </div>
             </div>
-
             <div class="col-md-6 col-lg-4">
               <div class="footer-contact">
                 <h2>UK Office</h2>
@@ -226,6 +157,7 @@
         <div class="container footer-menu">
           <div class="f-menu">
             <a href="./faq.html" style="color:#fdd200; text-decoration: underline;">Frequently Asked Questions</a> 
+
           </div>
         </div>
         <div class="container copyright">
@@ -234,38 +166,35 @@
               <p> &copy; <span style="color: #fdbe33"> 7 Canal Developers</span>, All Rights Reserved. </p>
             </div>
             <div class="col-md-6">
-               <div class="container footer-menu">
+              <div class="container footer-menu">
                 <div class="f-menu">
-                  <a href="https://www.facebook.com/7cresidence" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.facebook.com/7canaldevelopers" target="_blank"><i class="fab fa-facebook-f"></i></a>
                   <a href="https://twitter.com/7cresidence" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="https://www.youtube.com/channel/UCQa9vEGSu97bCHEns9asVNg" target="_blank"><i class="fab fa-youtube"></i></a>
-                  <a href="https://www.instagram.com/7cresidence/" target="_blank"><i class="fab fa-instagram"></i></a>
-                  <!-- <a href="https://www.linkedin.com/company/7c-residencia" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
-
+                  <a href="https://www.instagram.com/7canaldevelopers/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- Footer End -->
-
+      <!-- footer ends -->
       <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- More Javascript -->
+    <!-- Template Javascript -->
+    <script src="./js/main.js"></script>
     <script>
       AOS.init({
-        offset: 200,
+        offset: 120,
         duration: 700,
       });
     </script>
-    <script src="./js/main.js"></script>
   </body>
 </html>

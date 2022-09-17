@@ -1,79 +1,42 @@
 body {
   background-color: #fff;
 }
-
 .page-heading {
   margin: 150px 0 50px 0px;
   color: #cf9312;
   font-weight: normal;
 }
 
-.row img {
+.card {
+  border-radius: 0px !important;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border: 1px solid rgba(207, 147, 18, 0.3);
+  width: 100%;
+  padding: 1rem;
+}
+.card-img-top {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
   width: 100%;
 }
-
-.about-text {
-  text-align: justify;
-  font-size: 24px;
+.card img,
+.card-img-top {
+  object-fit: contain;
+  aspect-ratio: 1/0.7;
 }
 
-.projects-container ul {
-  list-style: none;
-  padding-left: 10px;
-}
-
-.projects-container ul li {
-  font-size: 18px;
-}
-
-.modal-body img {
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-a:active,
-a:focus {
-  color: unset;
-}
-
-.col-md-3 {
-  overflow: hidden !important;
-}
-/* img {
-  transition: transform 0.5s;
-}
-
-img:hover {
-  transform: scale(1.05);
-} */
-
-@media (min-width: 992px) {
-  .modal-body {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-
-  .modal-body img {
-    width: 50% !important;
-    border-radius: 0px !important;
-    margin: 0px !important;
-  }
-}
-
-.modal-header {
-  padding: 1rem 1rem;
-  border: none !important;
-  background-color: #333;
-  color: #fff !important;
-}
-.modal-header h5 {
-  color: #fff;
-}
-.modal-header button span {
-  color: #fff !important;
-}
-
-.form-modal .modal-body {
-  display: unset;
+.partners-container {
+  width: 100%;
+  max-width: 1566px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  /* background-color: #eee; */
+  background-color: rgba(238, 238, 238, 0.5);
+  padding: 50px;
 }
