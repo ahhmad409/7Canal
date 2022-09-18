@@ -2,9 +2,12 @@ body {
   background-color: #fff;
 }
 .page-heading {
-  margin: 150px 0 50px 0px;
+  margin: 200px 0 50px 0px;
   color: #cf9312;
   font-weight: normal;
+}
+.page-heading2 {
+  margin: 100px 0 50px 0px;
 }
 
 .card {
@@ -39,4 +42,8 @@ body {
   /* background-color: #eee; */
   background-color: rgba(238, 238, 238, 0.5);
   padding: 50px;
+}
+
+.about-paragraph {
+  font-size: 22px;
 }

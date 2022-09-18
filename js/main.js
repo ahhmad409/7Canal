@@ -14,20 +14,10 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
   link.addEventListener("click", () => {
     const downloadButton = document.getElementById("downloadBtn");
 
-    // const a = document.createElement("a");
-    // a.textContent = "Submit & Download";
-    // a.classList.add("btn", "btn-primary");
-    // a.setAttribute("id", "downloadBtn");
-    // a.setAttribute("type", "button");
-    // a.setAttribute("href", "#");
-    // document.querySelector(".modal-footer").replaceChild(a, downloadButton);
-
     downloadButton.addEventListener("click", () => {
       const name = document.getElementById("inputName");
       const email = document.getElementById("inputEmail");
       const contact = document.getElementById("inputContact");
-
-      console.log(`Name: ${name} \nEmail: ${email} \nContact: ${contact}`);
 
       if (!name.value || !email.value || !contact.value) {
         downloadButton.setAttribute("href", "#");
@@ -63,8 +53,6 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         return;
       }
 
-      // a.setAttribute("download", "download");
-
       // FOR PRODUCTION
       if (link.textContent == "Brochure")
         downloadButton.setAttribute("href", "./downloads/7Canal Brochure.pdf");
@@ -82,25 +70,11 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         downloadButton.setAttribute("href", "#");
       else if (link.textContent == "Floor Plans")
         downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
-
-      // FOR DEMO
-      // if (link.textContent == "Brochure")
-      //   a.setAttribute("href", "./daonlod.jpg");
-      // else if (link.textContent == "3D Walkthrough")
-      //   a.setAttribute("href", "./daonlod.jpg");
-      // else if (link.textContent == "Price Lists")
-      //   a.setAttribute("href", "./daonlod.jpg");
-      // else if (link.textContent == "Construction Update")
-      //   a.setAttribute("href", "./daonlod.jpg");
-      // else if (link.textContent == "Layouts")
-      //   a.setAttribute("href", "./daonlod.jpg");
-      // else if (link.textContent == "Floor Plans")
-      //   a.setAttribute("href", "./daonlod.jpg");
     });
   });
 });
 
-// to handle dropdownof bootstrap and make it open when hovering instead of clicking on it, for reference check below link
+// to handle dropdown of bootstrap and make it open when hovering instead of clicking on it, for reference check below link
 // https://www.tutorialrepublic.com/faq/how-to-open-bootstrap-dropdown-menu-on-hover-rather-than-click.php#:~:text=Answer%3A%20Use%20the%20jQuery%20hover,using%20the%20CSS%20and%20jQuery.
 $(document).ready(function () {
   $(".dropdown").hover(function () {
@@ -126,10 +100,11 @@ document
   });
 
 let arrowBtn = document.getElementById("book_now_arrow");
-// arrowBtn.addEventListener("mouseenter", () => {
-//   document.getElementsByClassName("booking_form")[0].style.transform =
-//     "scaleX(0)";
-// });
+
+arrowBtn.addEventListener("mouseenter", () => {
+  document.getElementsByClassName("booking_form")[0].style.transform =
+    "scaleX(0)";
+});
 
 arrowBtn.addEventListener("click", () => {
   let widget = document.getElementsByClassName("book_now_bottom_section")[0];
@@ -187,23 +162,33 @@ downloadArrowButton.addEventListener("click", () => {
   }
   widget.classList.toggle("book_now_widget_hidden");
 
-  let downloadList = document.getElementById("downloads_list");
-  if (!downloadList.classList.contains("opened")) {
-    downloadList.style.left = "0rem";
-  } else {
-    downloadList.style.left = "-10rem";
-  }
-  downloadList.classList.toggle("opened");
+  // let downloadList = document.getElementById("downloads_list");
+  // if (!downloadList.classList.contains("opened")) {
+  //   downloadList.style.left = "0rem";
+  // } else {
+  //   downloadList.style.left = "-10rem";
+  // }
+  // downloadList.classList.toggle("opened");
 });
 
-document.getElementById("widget_downloads").addEventListener("click", () => {
+document
+  .getElementById("widget_downloads")
+  .addEventListener("mouseenter", () => {
+    let downloadList = document.getElementById("downloads_list");
+    if (!downloadList.classList.contains("opened")) {
+      downloadList.style.left = "-10rem";
+    } else {
+      downloadList.style.left = "7rem";
+    }
+    downloadList.classList.toggle("opened");
+  });
+
+document.getElementById("downloads_list").addEventListener("mouseleave", () => {
   let downloadList = document.getElementById("downloads_list");
-  if (!downloadList.classList.contains("opened")) {
-    downloadList.style.left = "-10rem";
-  } else {
+  if (downloadList.classList.contains("opened")) {
     downloadList.style.left = "7rem";
+    downloadList.classList.remove("opened");
   }
-  downloadList.classList.toggle("opened");
 });
 
 document
