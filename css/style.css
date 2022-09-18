@@ -2483,6 +2483,11 @@ iframe {
   transition: 300ms linear !important;
   position: relative;
   left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
 }
 .book_now .fa-envelope {
   transform: rotate(90deg);
@@ -2572,4 +2577,23 @@ textarea {
 }
 .right-sidebar .socials * {
   cursor: pointer;
+}
+@media (max-width: 540px) {
+  .booking_form {
+    width: 250px !important;
+  }
+}
+.widget_downloads {
+  transform: rotate(180deg);
+  padding-top: 5px;
+}
+.downloads_list {
+  background: rgb(247, 247, 247);
+  position: absolute;
+  left: 3rem;
+  top: 0rem;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: 300ms linear;
 }

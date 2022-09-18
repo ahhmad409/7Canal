@@ -123,12 +123,10 @@ arrowBtn.addEventListener('click', () => {
   if (widget.classList.contains('book_now_widget_hidden')) {
     widget.style.left = '0px'
     arrowBtn.innerText = '←'
-
   }
   else {
     widget.style.left = '-50px'
     arrowBtn.innerText = '→'
-
   }
   widget.classList.toggle('book_now_widget_hidden')
 });
@@ -138,6 +136,7 @@ function onFormSubmit(event) {
 }
 
 let downloadArrowButton = document.getElementById('download_widgets_arrow');
+
 downloadArrowButton.addEventListener('click', () => {
   let widget = document.getElementsByClassName('downloads_widget_bottom_section')[0];
   if (widget.classList.contains('book_now_widget_hidden')) {
@@ -148,7 +147,16 @@ downloadArrowButton.addEventListener('click', () => {
     widget.style.right = '-160px'
     downloadArrowButton.innerText = '←'
   }
-  widget.classList.toggle('book_now_widget_hidden')
+  widget.classList.toggle('book_now_widget_hidden');
+
+  let downloadList = document.getElementById('downloads_list');
+  if (!downloadList.classList.contains('opened')) {
+    downloadList.style.left = '0rem';
+  }
+  else {
+    downloadList.style.left = '-10rem';
+  }
+  downloadList.classList.toggle('opened');
 });
 
 document.getElementById('sidebarButton').addEventListener('click', (event) => {
@@ -158,4 +166,21 @@ document.getElementById('sidebarButton').addEventListener('click', (event) => {
 document.getElementById('sidebar_closeButton').addEventListener('click', (event) => {
   let sidebar = document.getElementById('right-sidebar');
   sidebar.style.right = '-400px'
+})
+document.getElementById('widget_downloads').addEventListener('click', () => {
+  let downloadList = document.getElementById('downloads_list');
+  if (!downloadList.classList.contains('opened')) {
+    downloadList.style.left = '-10rem';
+  }
+  else {
+    downloadList.style.left = '7rem';
+  }
+  downloadList.classList.toggle('opened');
+})
+document.getElementById('book_now_bottom_section').addEventListener('click',()=>{
+  let downloadList = document.getElementById('downloads_list');
+  if (downloadList.classList.contains('opened')) {
+    downloadList.style.left = '7rem';
+    downloadList.classList.remove('opened');
+  }
 })
