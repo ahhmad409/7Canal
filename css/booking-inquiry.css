@@ -1,0 +1,75 @@
+body {
+  background-color: #fff;
+}
+
+.page-heading {
+  color: #cf9312;
+  font-weight: normal;
+}
+
+.margin-top-div {
+  margin: 200px 0 50px 0px;
+}
+
+.booking-inquiry {
+  display: flex;
+  gap: 5rem;
+  text-align: justify;
+}
+
+@media (max-width: 992px) {
+  .booking-inquiry {
+    flex-direction: column;
+  }
+}
+
+.booking-inquiry input,
+.booking-inquiry select,
+.booking-inquiry textarea {
+  display: block;
+  margin-top: 30px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  border: 1px solid #333;
+}
+
+.booking-inquiry option {
+  background-color: #030f27;
+}
+
+.booking-inquiry .right-side {
+  background-color: #030f27;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.booking-inquiry .left-side {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+@media (min-width: 992px) {
+  .booking-inquiry .right-side {
+    padding: 2rem 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .booking-inquiry .right-side {
+    padding: 5rem 2rem;
+  }
+}
+.book-now-btn {
+  padding: 1rem 2rem;
+  background-color: #fdbe33;
+  border: 1px solid #333;
+  color: #fff;
+  transition: 0.3s color;
+  margin-top: 1rem;
+}
+
+.book-now-btn:hover {
+  color: #333;
+}
