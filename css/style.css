@@ -2549,6 +2549,7 @@ textarea {
   flex-direction: column;
   gap: 0.5rem;
   padding-left: 10px;
+  padding-bottom: 1.3rem;
 }
 .downloads_widget_bottom_section {
   background: rgb(247, 247, 247);
@@ -2560,6 +2561,7 @@ textarea {
 }
 .downloads_Widget .top {
   border-top-left-radius: 10px;
+  border-top-right-radius: 0px;
 }
 .right-sidebar {
   position: fixed;
@@ -2602,10 +2604,9 @@ textarea {
   background: rgb(247, 247, 247);
   position: absolute;
   left: 3rem;
-  top: 0rem;
+  top: -2.7rem;
   padding: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 10px;
   transition: 300ms linear;
 }
 
@@ -2639,4 +2640,9 @@ textarea {
 
 .sidebar-logo {
   margin-top: 70px;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
 }

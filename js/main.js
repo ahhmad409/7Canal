@@ -150,6 +150,8 @@ function onFormSubmit(event) {
 let downloadArrowButton = document.getElementById("download_widgets_arrow");
 
 downloadArrowButton.addEventListener("click", () => {
+  // alert('arrow button clicked')
+
   let widget = document.getElementsByClassName(
     "downloads_widget_bottom_section"
   )[0];
@@ -162,13 +164,11 @@ downloadArrowButton.addEventListener("click", () => {
   }
   widget.classList.toggle("book_now_widget_hidden");
 
-  // let downloadList = document.getElementById("downloads_list");
-  // if (!downloadList.classList.contains("opened")) {
-  //   downloadList.style.left = "0rem";
-  // } else {
-  //   downloadList.style.left = "-10rem";
-  // }
-  // downloadList.classList.toggle("opened");
+  let downloadList = document.getElementById("downloads_list");
+  if (downloadList.classList.contains("opened")) {
+    downloadList.classList.remove('opened');
+    downloadList.style.left = "7rem";
+  }
 });
 
 document
@@ -176,7 +176,7 @@ document
   .addEventListener("mouseenter", () => {
     let downloadList = document.getElementById("downloads_list");
     if (!downloadList.classList.contains("opened")) {
-      downloadList.style.left = "-10rem";
+      downloadList.style.left = "-10.3rem";
     } else {
       downloadList.style.left = "7rem";
     }
@@ -212,3 +212,21 @@ document
     let sidebar = document.getElementById("right-sidebar");
     sidebar.style.right = "-400px";
   });
+
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
