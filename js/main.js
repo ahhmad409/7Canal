@@ -70,6 +70,8 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         downloadButton.setAttribute("href", "#");
       else if (link.textContent == "Floor Plans")
         downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
+      else if (link.textContent == "Booking Form")
+        downloadButton.setAttribute("href", "./downloads/booking-form.pdf");
     });
   });
 });
@@ -166,7 +168,7 @@ downloadArrowButton.addEventListener("click", () => {
 
   let downloadList = document.getElementById("downloads_list");
   if (downloadList.classList.contains("opened")) {
-    downloadList.classList.remove('opened');
+    downloadList.classList.remove("opened");
     downloadList.style.left = "7rem";
   }
 });
@@ -213,20 +215,19 @@ document
     sidebar.style.right = "-400px";
   });
 
-
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   // Optional parameters
-  direction: 'vertical',
+  direction: "vertical",
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
