@@ -191,7 +191,8 @@ a:focus {
 .navbar-dark .navbar-nav .nav-link.active {
   padding: 10px 10px 8px 10px;
   color: #ffffff;
-  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -826,7 +827,8 @@ a:focus {
   margin: 45px 0;
   height: 100%;
   min-height: 500px;
-  background: linear-gradient(rgba(3, 15, 39, 0.9), rgba(3, 15, 39, 0.9)), url(../img/carousel-1.jpg);
+  background: linear-gradient(rgba(3, 15, 39, 0.9), rgba(3, 15, 39, 0.9)),
+    url(../img/carousel-1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1157,7 +1159,8 @@ a:focus {
   margin: 45px 0;
   padding: 90px 0;
   text-align: center;
-  background: linear-gradient(rgba(3, 15, 39, 0.9), rgba(3, 15, 39, 0.9)), url(../img/carousel-1.jpg);
+  background: linear-gradient(rgba(3, 15, 39, 0.9), rgba(3, 15, 39, 0.9)),
+    url(../img/carousel-1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -2640,14 +2643,30 @@ textarea {
 }
 
 .swiper {
-  height: 700px;
-  margin-top: 125px;
+  height: 100vh;
+  /* margin-top: 125px; */
+  z-index: 0;
 }
+
 .swiper .text {
   position: absolute;
   top: 50%;
   left: 10%;
 }
+
+.swiper .text h1,
+.swiper .text h4 {
+  color: #fff !important;
+}
+
 .swiper img {
   width: inherit;
+  height: 100vh;
+  width: 100%;
+}
+
+/* below two lines remove swiper arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
 }

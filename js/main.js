@@ -53,25 +53,29 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         return;
       }
 
-      // FOR PRODUCTION
-      if (link.textContent == "Brochure")
-        downloadButton.setAttribute("href", "./downloads/7Canal Brochure.pdf");
-      else if (link.textContent == "3D Walkthrough")
-        downloadButton.setAttribute(
-          "href",
-          "./downloads/7-Canal-walkthrough.mp4"
-        );
-      else if (link.textContent == "Price Lists") {
-        downloadButton.setAttribute("download", "Price List");
-        downloadButton.setAttribute("href", "./downloads/price-list.jpeg");
-      } else if (link.textContent == "Construction Update")
-        downloadButton.setAttribute("href", "#");
-      else if (link.textContent == "Layouts")
-        downloadButton.setAttribute("href", "#");
-      else if (link.textContent == "Floor Plans")
-        downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
-      else if (link.textContent == "Booking Form")
-        downloadButton.setAttribute("href", "./downloads/booking-form.pdf");
+      downloadButton.setAttribute("href", "./downloads/dummy.mkv");
+
+      // FOR PRODUCTION, uncomment below code
+      // if (link.textContent == "Brochure")
+      //   downloadButton.setAttribute("href", "./downloads/7Canal Brochure.pdf");
+      // else if (link.textContent == "3D Walkthrough")
+      //   downloadButton.setAttribute(
+      //     "href",
+      //     "./downloads/7-Canal-walkthrough.mp4"
+      //   );
+      // else if (link.textContent == "Price Lists") {
+      //   downloadButton.setAttribute("download", "Price List");
+      //   downloadButton.setAttribute("href", "./downloads/price-list.jpeg");
+      // } else if (link.textContent == "Construction Update")
+      //   downloadButton.setAttribute("href", "#");
+      // else if (link.textContent == "Layouts")
+      //   downloadButton.setAttribute("href", "#");
+      // else if (link.textContent == "Floor Plans")
+      //   downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
+      // else if (link.textContent == "Booking Form")
+      //   downloadButton.setAttribute("href", "./downloads/booking-form.pdf");
+      // else if (link.textContent == "Certifications | NOC's")
+      //   downloadButton.setAttribute("href", "./downloads/nocs.pdf");
     });
   });
 });
@@ -217,8 +221,12 @@ document
 
 const swiper = new Swiper(".swiper", {
   // Optional parameters
-  direction: 'horizontal',
+  direction: "horizontal",
   loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
 
   // If we need pagination
   pagination: {
