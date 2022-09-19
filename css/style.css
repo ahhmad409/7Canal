@@ -2519,7 +2519,7 @@ iframe {
 .book_now_wrapper .booking_form input,
 select,
 textarea {
-  border-radius: 0px;
+  border-radius: 5px;
   width: 100%;
   border: 1px solid gray;
   margin-bottom: 20px;
