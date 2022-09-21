@@ -10,8 +10,8 @@ bookBtn.addEventListener("click", () => {
   if (
     !name.value ||
     !email.value ||
-    phone.value ||
-    apartments.value ||
+    !phone.value ||
+    !apartments.value ||
     !message.value
   ) {
     Swal.fire({
@@ -21,15 +21,29 @@ bookBtn.addEventListener("click", () => {
     return;
   }
 
-  console.log(name.value);
-  console.log(email.value);
-  console.log(phone.value);
-  console.log(apartments.value);
-  console.log(message.value);
-
-  Swal.fire({
-    title: "Your query has been received",
-    confirmButtonText: "OK",
+  var Obj = {
+    subject: "Booking Inquiry",
+    message:
+      "<html><b>This person wants to get in touch with you!</p><h3>Name:</b><strong>" +
+      $("#name").val() +
+      "</strong><h3> Phone:</h3><strong>" +
+      $("#phone").val() +
+      "</strong><h3> Email:</h3><strong>" +
+      $("#email").val() +
+      "</strong><h3> Want to book:</h3><strong>" +
+      $("#apartments option:selected").text() +
+      "</strong><h3> Message:</h3><strong>" +
+      $("#message").val() +
+      "</strong><br></br></html>",
+  };
+  $.ajax({
+    url: "https://einvoicing.000webhostapp.com/index.php",
+    type: "POST",
+    data: Obj,
+    success: function (data) {
+      console.log(data);
+      ShowToastr();
+    },
   });
 
   name.value = "";

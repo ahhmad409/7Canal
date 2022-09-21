@@ -2626,7 +2626,7 @@ textarea {
   margin-left: 20px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height: 769px) {
   .contact-text-middle {
     margin-top: 150px;
   }
@@ -2654,15 +2654,17 @@ textarea {
   left: 10%;
 }
 
-.swiper .text h1,
-.swiper .text h4 {
+.swiper .text h3,
+.swiper .text h5 {
   color: #fff !important;
+  text-shadow: 2px 2px #000;
 }
 
 .swiper img {
   width: inherit;
   height: 100vh;
   width: 100%;
+  object-fit: cover;
 }
 
 /* below two lines remove swiper arrows */

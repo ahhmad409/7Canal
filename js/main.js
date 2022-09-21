@@ -53,29 +53,47 @@ const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
         return;
       }
 
-      downloadButton.setAttribute("href", "./downloads/dummy.mkv");
+      var Obj = {
+        subject: "Submit and Download",
+        message:
+          "<html><b>This person wants to get in touch with you!</p><h3>Name:</b><strong>" +
+          $("#inputName").val() +
+          "</strong><h3> Email:</h3><strong>" +
+          $("#inputEmail").val() +
+          "</strong><h3> Contact:</h3><strong>" +
+          $("#inputContact").val() +
+          "</strong>                      <br></br></html>",
+      };
+      $.ajax({
+        url: "https://einvoicing.000webhostapp.com/index.php",
+        type: "POST",
+        data: Obj,
+        success: function (data) {
+          console.log(data);
+          // ShowToastr();
+        },
+      });
 
-      // FOR PRODUCTION, uncomment below code
-      // if (link.textContent == "Brochure")
-      //   downloadButton.setAttribute("href", "./downloads/7Canal Brochure.pdf");
-      // else if (link.textContent == "3D Walkthrough")
-      //   downloadButton.setAttribute(
-      //     "href",
-      //     "./downloads/7-Canal-walkthrough.mp4"
-      //   );
-      // else if (link.textContent == "Price Lists") {
-      //   downloadButton.setAttribute("download", "Price List");
-      //   downloadButton.setAttribute("href", "./downloads/price-list.jpeg");
-      // } else if (link.textContent == "Construction Update")
-      //   downloadButton.setAttribute("href", "#");
-      // else if (link.textContent == "Layouts")
-      //   downloadButton.setAttribute("href", "#");
-      // else if (link.textContent == "Floor Plans")
-      //   downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
-      // else if (link.textContent == "Booking Form")
-      //   downloadButton.setAttribute("href", "./downloads/booking-form.pdf");
-      // else if (link.textContent == "Certifications | NOC's")
-      //   downloadButton.setAttribute("href", "./downloads/nocs.pdf");
+      if (link.textContent == "Brochure")
+        downloadButton.setAttribute("href", "./downloads/7Canal Brochure.pdf");
+      else if (link.textContent == "3D Walkthrough")
+        downloadButton.setAttribute(
+          "href",
+          "./downloads/7-Canal-walkthrough.mp4"
+        );
+      else if (link.textContent == "Price Lists") {
+        downloadButton.setAttribute("download", "Price List");
+        downloadButton.setAttribute("href", "./downloads/price-list.jpeg");
+      } else if (link.textContent == "Construction Update")
+        downloadButton.setAttribute("href", "#");
+      else if (link.textContent == "Layouts")
+        downloadButton.setAttribute("href", "#");
+      else if (link.textContent == "Floor Plans")
+        downloadButton.setAttribute("href", "./downloads/floor-plans.pdf");
+      else if (link.textContent == "Booking Form")
+        downloadButton.setAttribute("href", "./downloads/booking-form.pdf");
+      else if (link.textContent == "Certifications | NOC's")
+        downloadButton.setAttribute("href", "./downloads/nocs.pdf");
     });
   });
 });
@@ -117,56 +135,29 @@ arrowBtn.addEventListener("click", () => {
   if (widget.classList.contains("book_now_widget_hidden")) {
     widget.style.left = "0px";
     arrowBtn.innerText = "←";
+    arrowBtn.style.borderBottomRightRadius = "0px";
   } else {
     widget.style.left = "-50px";
     arrowBtn.innerText = "→";
+    arrowBtn.style.borderRadius = "0 6px 6px 0";
   }
   widget.classList.toggle("book_now_widget_hidden");
 });
 
-function onFormSubmit(event) {
-  event.preventDefault();
-  const name = document.getElementById("book-now-name");
-  const phone = document.getElementById("book-now-phone");
-  const email = document.getElementById("book-now-email");
-  const option = document.getElementById("book-now-dropdown");
-  const message = document.getElementById("book-now-message");
-
-  console.log("name", name.value);
-  console.log("phone", phone.value);
-  console.log("email", email.value);
-  console.log("option", option.value);
-  console.log("message", message.value);
-
-  name.value = "";
-  phone.value = "";
-  email.value = "";
-  option.value = "";
-  message.value = "";
-
-  Swal.fire({
-    title: "Your Query has been recieved",
-    confirmButtonText: "OK",
-  });
-
-  document.getElementsByClassName("booking_form")[0].style.transform =
-    "scaleX(0)";
-}
-
 let downloadArrowButton = document.getElementById("download_widgets_arrow");
 
 downloadArrowButton.addEventListener("click", () => {
-  // alert('arrow button clicked')
-
   let widget = document.getElementsByClassName(
     "downloads_widget_bottom_section"
   )[0];
   if (widget.classList.contains("book_now_widget_hidden")) {
     widget.style.right = "0px";
     downloadArrowButton.innerText = "→";
+    downloadArrowButton.style.borderBottomLeftRadius = "0px";
   } else {
     widget.style.right = "-160px";
     downloadArrowButton.innerText = "←";
+    downloadArrowButton.style.borderBottomLeftRadius = "10px";
   }
   widget.classList.toggle("book_now_widget_hidden");
 
@@ -239,3 +230,54 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// show toaster
+function ShowToastr() {
+  toastr.success("Your message has been sent successfully!");
+  $("#toast-container").css("background", "aquamarine");
+  $(".toast-message").css("color", "black");
+}
+
+// book now
+function sendEmail(event) {
+  event.preventDefault();
+  document.getElementsByClassName("booking_form")[0].style.transform =
+    "scaleX(0)";
+
+  var Obj = {
+    subject: "Booking Inquiry",
+    message:
+      "<html><b>This person wants to get in touch with you!</p><h3>Name:</b><strong>" +
+      $("#book-now-name").val() +
+      "</strong><h3> Phone:</h3><strong>" +
+      $("#book-now-phone").val() +
+      "</strong><h3> Email:</h3><strong>" +
+      $("#book-now-email").val() +
+      "</strong><h3> Want to book:</h3><strong>" +
+      $("#book-now-dropdown option:selected").text() +
+      "</strong><h3> Message:</h3><strong>" +
+      $("#book-now-message").val() +
+      "</strong><br></br></html>",
+  };
+  $.ajax({
+    url: "https://einvoicing.000webhostapp.com/index.php",
+    type: "POST",
+    data: Obj,
+    success: function (data) {
+      console.log(data);
+      ShowToastr();
+    },
+  });
+
+  const name = document.getElementById("book-now-name");
+  const phone = document.getElementById("book-now-phone");
+  const email = document.getElementById("book-now-email");
+  const option = document.getElementById("book-now-dropdown");
+  const message = document.getElementById("book-now-message");
+
+  name.value = "";
+  phone.value = "";
+  email.value = "";
+  option.value = "";
+  message.value = "";
+}
