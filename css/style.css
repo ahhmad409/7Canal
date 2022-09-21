@@ -2672,3 +2672,15 @@ textarea {
 .swiper-button-prev::after {
   content: "";
 }
+
+.fancybox-caption__body {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+}
+
+.downloadLink:visited,
+.downloadLink:focus,
+.downloadLink:active {
+  color: #666 !important;
+}
