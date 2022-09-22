@@ -237,15 +237,16 @@ const swiper = new Swiper(".swiper", {
   // },
 });
 
+// swiper.on("slideChange", function (info) {
+//   console.log("slideChangeInfo: ", info);
+//   info.visibleSlides[0].children[0].style.animation = "none";
+//   setTimeout(() => {
+//     info.visibleSlides[0].children[0].style.animation = "";
+//   }, 50);
+// });
+
 swiper.on("slideChange", function (info) {
-  console.log("slideChangeInfo: ", info);
-  info.visibleSlides[0].children[0].style.animation = "none";
-  setTimeout(() => {
-    info.visibleSlides[0].children[0].style.animation = "";
-  }, 50);
-});
-swiper.on("slideChange", function (info) {
-  console.log("slideChangeInfo: ", info);
+  // console.log("slideChangeInfo: ", info);
   info.visibleSlides[0].children[0].style.animation = "none";
   setTimeout(() => {
     info.visibleSlides[0].children[0].style.animation = "";
@@ -262,6 +263,47 @@ function ShowToastr() {
 // book now
 function sendEmail(event) {
   event.preventDefault();
+
+  const name = document.getElementById("book-now-name");
+  const phone = document.getElementById("book-now-phone");
+  const email = document.getElementById("book-now-email");
+  const option = document.getElementById("book-now-dropdown");
+  const message = document.getElementById("book-now-message");
+
+  if (
+    !name.value ||
+    !email.value ||
+    !phone.value ||
+    !option.value ||
+    !message.value
+  ) {
+    Swal.fire({
+      title: "Please Enter All Fields",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+  const validPhone = "^([0-9()/+ -]*)$";
+  if (phone.value.match(validPhone)) {
+  } else {
+    Swal.fire({
+      title: "Please check your phone number!",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  const validEmail =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (email.value.match(validEmail)) {
+  } else {
+    Swal.fire({
+      title: "Please check your email again!",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
   document.getElementsByClassName("booking_form")[0].style.transform =
     "scaleX(0)";
 
@@ -289,12 +331,6 @@ function sendEmail(event) {
       ShowToastr();
     },
   });
-
-  const name = document.getElementById("book-now-name");
-  const phone = document.getElementById("book-now-phone");
-  const email = document.getElementById("book-now-email");
-  const option = document.getElementById("book-now-dropdown");
-  const message = document.getElementById("book-now-message");
 
   name.value = "";
   phone.value = "";

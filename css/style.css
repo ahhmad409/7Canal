@@ -2238,7 +2238,7 @@ a:focus {
 }
 
 .footer .copyright {
-  padding: 30px 15px;
+  padding: 10px 15px;
 }
 
 .footer .copyright .row {
@@ -2262,6 +2262,11 @@ a:focus {
 
 .footer .copyright p a:hover {
   color: #ffffff;
+}
+
+.footer .copyright p a:hover {
+  color: #fdbe33 !important;
+  text-decoration: underline !important;
 }
 
 @media (max-width: 768px) {
