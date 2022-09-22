@@ -2648,10 +2648,25 @@ textarea {
   z-index: 0;
 }
 
-.swiper .text {
+.swiperSlideHeading {
   position: absolute;
   top: 50%;
   left: 10%;
+  animation: swiperTextAnimation 1000ms ease-out;
+}
+.swiperSlideAnimation{
+  animation: swiperTextAnimation 1000ms ease-out !important;
+
+}
+@keyframes swiperTextAnimation {
+  from {
+    opacity: 0;
+    top: 40%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
 }
 
 .swiper .text h3,

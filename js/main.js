@@ -214,10 +214,12 @@ const swiper = new Swiper(".swiper", {
   // Optional parameters
   direction: "horizontal",
   loop: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
+  effect: 'fade',
+  speed: 1000,
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
 
   // If we need pagination
   pagination: {
@@ -229,6 +231,14 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+swiper.on('slideChange', function (info) {
+  console.log('slideChangeInfo: ', info);
+  info.visibleSlides[0].children[0].style.animation = 'none';
+  setTimeout(() => {
+    info.visibleSlides[0].children[0].style.animation = '';
+  }, 50);
+
 });
 
 // show toaster
