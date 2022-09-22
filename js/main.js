@@ -214,11 +214,15 @@ const swiper = new Swiper(".swiper", {
   // Optional parameters
   direction: "horizontal",
   loop: true,
+<<<<<<< HEAD
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
   },
   effect: "fade",
+=======
+  effect: 'fade',
+>>>>>>> 0a70c8c1cabcdac910abef7d2a8887ede3a03d7d
   speed: 1000,
   // autoplay: {
   //   delay: 3000,
@@ -243,6 +247,14 @@ swiper.on("slideChange", function (info) {
   setTimeout(() => {
     info.visibleSlides[0].children[0].style.animation = "";
   }, 50);
+});
+swiper.on('slideChange', function (info) {
+  console.log('slideChangeInfo: ', info);
+  info.visibleSlides[0].children[0].style.animation = 'none';
+  setTimeout(() => {
+    info.visibleSlides[0].children[0].style.animation = '';
+  }, 50);
+
 });
 
 // show toaster
