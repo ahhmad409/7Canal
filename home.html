@@ -100,7 +100,15 @@
                           </a>
                           <div class="navbar-nav ">
                               <a href="./home.html" class="nav-item nav-link active ">Home</a>
-                              <a href="./residences.html" class="nav-item nav-link hover-underline-animation">Residences</a>
+                              <!-- <a href="./residences.html" class="nav-item nav-link hover-underline-animation">Residences</a> -->
+                              <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown" >Residence</a>
+                                <div class="dropdown-menu">
+                                  <a href="./one-bed-apartments.html" class="dropdown-item" >1 bed apartment</a>
+                                  <a href="./two-bed-apartments.html" class="dropdown-item">2 bed apartment</a>
+                                  <a href="./three-bed-apartments.html" class="dropdown-item">3 bed apartment</a>
+                                </div>
+                              </div>
                               <a href="./amenities.html" class="nav-item nav-link hover-underline-animation">Amenities</a>
                               <a href="./gallery.html" class="nav-item nav-link hover-underline-animation">Gallery</a>
                               <a href="./updates.html" class="nav-item nav-link hover-underline-animation">Construction Updates</a>
@@ -119,25 +127,25 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="text">
-              <h3>The Epicenter of Luxury and Convenience</h3>
+            <div class="text swiperSlideHeading">
+              <h3>Tranquility with an unreal View</h3>
               <h5>
-                Discover luxury in every Step, Nothing is impossible here at 7
-                Canal residence Due to prime location, luxury and Convenience
+                Sit back and Relax your new view awaits to make you feel always
+                fresh
               </h5>
             </div>
-            <img src="images/home/slider-img-1.jpg" alt="" />
+            <img src="images/home/slider-img-1.jpg" alt="slider image 1" />
           </div>
 
           <div class="swiper-slide">
-            <div class="text">
+            <div class="text swiperSlideHeading">
               <h3>Remarkable Value, Unbeatable Location</h3>
               <h5>
                 Located at Canal Road, which has access to everywhere you want
                 to be
               </h5>
             </div>
-            <img src="images/home/slider-img-2.jpg" alt="" />
+            <img src="images/home/slider-img-2.jpg" alt="slider image 2" />
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -375,11 +383,13 @@
       <div class="footer" data-aos="fade-in">
               <div class="container">
                   <div class="row">
-
-                      <div class="col-md-6 col-lg-4">
-                          <div class="footer-contact">
-                              <h2>Head Office</h2>
-                              <p> <i class="fa fa-map-marker-alt"></i> 7 Canal Park, Gulberg 2, Lahore </p>
+                    <div class="col-md-6 col-lg-4">
+                      <div class="footer-contact">
+                            <img src="./images/logo.png" alt="logo" width="50px">
+                              <h2 style="display:inline-block">Head Office</h2>
+                              <p> <i class="fa fa-map-marker-alt"></i> Site Office 7C Residence:
+                                7 Canal Park, Gulberg 2, Lahore.
+                                 </p>
                               <p><i class="fa fa-envelope" aria-hidden="true"></i> info@7canal.com</p>
                               <p><i class="fa fa-phone-alt"></i> 042 359 590 77</p>
                               <p><i class="fas fa-mobile"></i>+92 322 851 8920</p>
@@ -413,8 +423,8 @@
               </div>
               <div class="container footer-menu">
                   <div class="f-menu">
+                    <a href="./privacy-policy.html" style="color:#fdd200; text-decoration: underline;"> Privacy Policy</a>
                       <a href="./faq.html" style="color:#fdd200; text-decoration: underline;">Frequently Asked Questions</a>
-                      <a href="./privacy-policy.html" style="color:#fdd200; text-decoration: underline;"> Privacy Policy</a>
                   </div>
               </div>
               <div class="container copyright">

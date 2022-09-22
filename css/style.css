@@ -2551,6 +2551,7 @@ textarea {
   padding-left: 10px;
   padding-bottom: 1.3rem;
 }
+
 .downloads_widget_bottom_section {
   background: rgb(247, 247, 247);
   border-bottom-left-radius: 10px;
@@ -2608,6 +2609,7 @@ textarea {
   padding: 10px;
   border-radius: 10px;
   transition: 300ms linear;
+  width: 250px;
 }
 
 .whatsapp-contact {
@@ -2648,16 +2650,39 @@ textarea {
   z-index: 0;
 }
 
-.swiper .text {
+.swiperSlideHeading {
   position: absolute;
   top: 50%;
   left: 10%;
+  animation: swiperTextAnimation 1000ms ease-out;
+}
+
+.swiperSlideAnimation {
+  animation: swiperTextAnimation 1000ms ease-out !important;
+}
+
+@keyframes swiperTextAnimation {
+  from {
+    opacity: 0;
+    top: 35%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
 }
 
 .swiper .text h3,
 .swiper .text h5 {
   color: #fff !important;
-  text-shadow: 2px 2px #000;
+  text-shadow: 0 5px 5px #000;
+}
+
+@media (min-width: 992px) {
+  .swiper .text h3,
+  .swiper .text h5 {
+    font-size: 2em;
+  }
 }
 
 .swiper img {
@@ -2679,7 +2704,6 @@ textarea {
   border-radius: 5rem;
 }
 
-.downloadLink:visited,
 .downloadLink:focus,
 .downloadLink:active {
   color: #666 !important;
