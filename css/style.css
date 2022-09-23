@@ -4,7 +4,8 @@
 body {
   color: #666666;
   background: #dddddd;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Times New Roman", Times, serif;
   font-weight: 400;
 }
 
@@ -172,7 +173,7 @@ a:focus {
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.75;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 999;
   background-color: #000 !important;
@@ -2606,15 +2607,18 @@ textarea {
   transform: rotate(180deg);
   padding-top: 5px;
 }
+
 .downloads_list {
   background: rgb(247, 247, 247);
   position: absolute;
-  left: 3rem;
-  top: -2.7rem;
+  left: 2rem;
+  top: -2.9rem;
   padding: 10px;
   border-radius: 10px;
   transition: 300ms linear;
   width: 250px;
+  /* z-index: -1; */
+  height: 199px;
 }
 
 .whatsapp-contact {
@@ -2657,9 +2661,10 @@ textarea {
 
 .swiperSlideHeading {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 10%;
   animation: swiperTextAnimation 1000ms ease-out;
+  z-index: 3;
 }
 
 .swiperSlideAnimation {
@@ -2673,20 +2678,28 @@ textarea {
   }
   to {
     opacity: 1;
-    top: 50%;
+    top: 40%;
   }
 }
 
-.swiper .text h3,
+.swiper .text h1,
 .swiper .text h5 {
   color: #fff !important;
-  text-shadow: 0 5px 5px #000;
+  text-shadow: 0 15px 15px #000;
 }
 
 @media (min-width: 992px) {
-  .swiper .text h3,
+  .swiperSlideHeading {
+    width: 40%;
+    left: 20%;
+  }
   .swiper .text h5 {
-    font-size: 2em;
+    font-size: 1.4em;
+  }
+  .swiper .text h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 30px;
   }
 }
 
@@ -2695,6 +2708,7 @@ textarea {
   height: 100vh;
   width: 100%;
   object-fit: cover;
+  filter: brightness(0.7);
 }
 
 /* below two lines remove swiper arrows */
