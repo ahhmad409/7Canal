@@ -193,7 +193,8 @@ a:focus {
 } */
 
 .bg-dark {
-  background-color: rgba(0, 0, 0, 1) !important;
+  /* background-color: rgba(0, 0, 0, 1) !important; */
+  background-color: #030f27 !important;
 }
 
 .nav-bar .navbar {
@@ -2628,7 +2629,7 @@ textarea {
 .downloads_list {
   background: rgb(247, 247, 247);
   position: absolute;
-  left: 2rem;
+  left: 3rem;
   top: -2.9rem;
   padding: 10px;
   border-radius: 10px;
@@ -2743,4 +2744,23 @@ textarea {
 .downloadLink:focus,
 .downloadLink:active {
   color: #666 !important;
+}
+
+.footer-logo-2 {
+  width: 200px;
+  position: relative;
+  left: -30px;
+  top: -10px;
+}
+
+.wrapper {
+  background-image: url("../images/booking-inquiry/footer-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  background-image: url("../images/booking-inquiry/booking-inquiry-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }

@@ -13,6 +13,7 @@
 const allLinks = document.querySelectorAll(".downloadLink").forEach((link) => {
   link.addEventListener("click", () => {
     const downloadButton = document.getElementById("downloadBtn");
+    downloadButton.removeAttribute("download");
 
     downloadButton.addEventListener("click", () => {
       const name = document.getElementById("inputName");
